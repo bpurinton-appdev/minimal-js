@@ -9,9 +9,152 @@
   <li id="sfo" class="west">San Francisco</li>
 </ul>
 
-<script>
-  // Write your JS here.
-  // Open the JS console and refresh the page to see the output.
+<% for i in 0...6 %>
+  <%= i * 2 %>
+<% end %>
 
+<div id="bye">
+  <h2 style="color: white; background-color: black">Click me</h2>
+</div>
+
+<script>
+  // Basic JS
+  // Open the JS console and refresh the page to see the output.
   
+  // console.log("howdy")
+
+  // console.log(`You're lucky number is ${ 7 * 6.2 }`);
+
+  // let name = "Bob";
+  // let name2 = `Alice`;
+  // console.log(`hi ${name} and ${name2}`);
+
+  // const pi = 3.14;
+  // // pi = 5;
+  // console.log(pi);
+
+  // let aLongName = 5;
+  // console.log(aLongName);
+
+  function say_hello() {
+    console.log("Hello, world!");
+  }
+
+  function say_hello_name(name) {
+    console.log(`Hello, ${name}!`);
+  }
+  
+  // for (let index = 0; index < 6; index++) {
+  //   // const element = array[index];
+  //   console.log(index);
+  // }
+
+  let myArray = [5, "banana", 1.1];
+  // console.log(myArray[1]);
+  // console.log(myArray.length);
+
+  // myArray.forEach(function(arrayElement) {
+  //   console.log(arrayElement);
+  // });
+
+  let prob = Math.random();
+  let dice_roll = Math.ceil(Math.random() * 6);
+  // console.log(prob);
+  // console.log(dice_roll);
+
+  // let moves = ["rock", "paper", "scissors"];
+  // let randomIndex = Math.floor(Math.random() * 3);
+  // let yourMove = moves[randomIndex];
+  // console.log("The computer played rock");
+  // if (yourMove === "rock") {
+  //   console.log(`You played ${yourMove}`);
+  //   console.log("You tied.");
+  // } else if (yourMove === "paper") {
+  //   console.log(`You played ${yourMove}`);
+  //   console.log(`You won.`);
+  // } else {
+  //   console.log(`You played ${yourMove}`);
+  //   console.log(`You lost.`);
+  // }
+
+  // for (let index = 1; index < 101; index++) {
+  //   if (index%3 === 0 && index%5 === 0) {
+  //     console.log(`FizzBuzz`);
+  //   } else if (index%3 === 0) {
+  //     console.log(`Fizz`);
+  //   } else if (index%5 === 0) {
+  //     console.log(`Buzz`);
+  //   } else {
+  //     console.log(index)
+  //   }
+  // }
+  
+</script>
+
+<script>
+  // javascript document manipulation
+
+  // let list = document.getElementById("cities_list");
+
+  // let eastItems = document.getElementsByClassName("east");
+  // for (let index = 0; index < eastItems.length; index++) {
+  //   element = eastItems[index];
+  //   element.style.border = "thin blue solid";
+  // }
+
+  // let den = document.createElement("li");
+  // let den_text = document.createTextNode("Denver");
+  // den.append(den_text);
+  // den.style.backgroundColor = "orange";
+  // den.className = "west";
+  // den.id = "den";
+  // list.prepend(den);
+</script>
+
+
+<script>
+  // jQuery
+
+  // console.log(jQuery("li"));
+  // console.log(jQuery(".west"));
+  // console.log(jQuery("#ord"));
+
+  console.log($("li"));
+  console.log($(".west"));
+  console.log($("#ord"));
+
+  let chi = $("#ord");
+  console.log(chi.text());
+  chi.css("background-color", "yellow");
+  chi.css("border", "thin red solid");
+  // chi.hide();
+  list = $("#cities_list");
+  list.append(chi);
+
+  $(".east").css("border", "thin blue solid");
+
+  let den = $('<li id="den" class="west">Denver</li>');
+  list.append(den);
+
+  chi.fadeIn();
+  chi.fadeOut();
+
+  chi.fadeToggle();
+  chi.fadeToggle();
+
+  // chi.fadeToggle(1000, function() {
+  //   alert("all done!");
+  // });
+  
+
+  // $("body").on("click", "#bye", function() {
+  //   $(".west").slideToggle();
+  // });
+
+  // only run the code when the document is fully loaded
+  $(document).ready(function() {
+    $("body").on("click", "#bye", function() {
+    $(".west").slideToggle();
+    });
+  });
 </script>
